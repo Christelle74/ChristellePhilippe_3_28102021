@@ -9,13 +9,14 @@ body {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 22px;
   font-family: "roboto";
   font-weight: bolder;
+  padding: 2%;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 22px;
   font-family: "roboto";
   text-align: left;
   margin: 5%;
@@ -31,38 +32,65 @@ h3 {
 p {
   font-family: "roboto";
   margin: 5% 0;
-  font-weight: lighter;
+  font-size: 15px;
 }
 
 /*------header------*/
+#enteteresto {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 60px;
+}
+
 #logo img {
-  width: 50%;
+  width: 40%;
   height: 50%;
 }
 
-#recherche {
-  display: flex;
-  justify-content: center;
-  padding: 0 5% 0 0;
-  background-color: #e4e4e4;
-  box-shadow: inset 0px 1px 2px #747474;
-  margin-top: 2%;
+.fleche {
+  position: absolute;
+  left: 20px;
+  color: black;
+}
+.fleche:hover {
+  color: #9356DC;
 }
 
-.fas {
+.recherche {
+  background-color: #f2f2f2;
+}
+.recherche__lieu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10% 0 0;
+  margin-top: 2%;
+  height: 60px;
+  background-color: #e4e4e4;
+  box-shadow: inset 0px 2px 5px #b9b9b9;
+}
+.recherche__exploration {
+  height: 250px;
+  padding: 2%;
+  background-color: #f2f2f2;
+}
+.recherche p {
+  font-weight: lighter;
+  font-size: 16px;
+  padding: 2%;
+}
+.recherche .fas {
   margin: 5%;
 }
 
-#exploration {
-  padding: 4%;
-  background-color: #f2f2f2;
-}
-
 button {
-  padding: 4%;
+  padding: 4% 5%;
   border-radius: 25px;
   border: none;
   font-size: 14px;
+  font-weight: bold;
   background: linear-gradient(to top, #9356DC, #FF79DA);
   box-shadow: 0 5px 5px #c9c8c8;
   transform: scale(1);
@@ -78,30 +106,31 @@ button a {
 }
 
 #fonctionnement {
-  padding: 4%;
+  padding: 2%;
 }
 
 .element {
   text-decoration: none;
   color: black;
-  font-weight: bold;
   background-color: #f2f2f2;
-  border-radius: 25px;
-  padding: 2%;
-  margin: 5%;
+  border-radius: 15px;
+  padding: 5%;
+  margin: 5% 8%;
   display: flex;
   flex-direction: row;
   align-items: center;
   box-shadow: 0 8px 10px #dedede;
+  position: relative;
+  transition: 400ms ease-in-out;
 }
 .element__numero {
   background-color: #9356DC;
-  padding: 4%;
+  padding: 2%;
   width: 25px;
   height: 25px;
   border-radius: 999px;
   color: white;
-  margin: 2% 2% 2% -6%;
+  margin: 2% 2% 2% -10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,18 +139,33 @@ button a {
 .element__icone {
   margin: 0 5%;
   color: #737373;
+  position: absolute;
+  left: 20px;
+}
+.element p {
+  position: absolute;
+  left: 70px;
 }
 .element:hover {
   background-color: #f2eafb;
 }
+.element:hover .fas {
+  color: #9356DC;
+}
 
 #restaurants {
   background-color: #f2f2f2;
-  padding: 4%;
+  padding: 2%;
+}
+
+#fiche {
+  background-color: #f2f2f2;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
 }
 
 .carte {
-  margin: 5% 0;
+  margin: 5%;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -129,6 +173,9 @@ button a {
   position: relative;
   box-shadow: 0 5px 5px #c9c8c8;
   text-align: left;
+}
+.carte p {
+  font-weight: lighter;
 }
 .carte__img {
   width: 100%;
@@ -145,7 +192,7 @@ button a {
   top: 5%;
   right: 5%;
   background-color: #99E2D0;
-  padding: 2% 5%;
+  padding: 2%;
   border-radius: 5%;
   color: #99E2D0 10%;
   font-size: 14px;
@@ -156,7 +203,7 @@ button a {
   position: absolute;
   right: 8%;
   bottom: 12%;
-  font-size: 25px;
+  font-size: 20px;
   color: white;
   transform: scale(1);
   transition: transform 400ms;
@@ -176,6 +223,20 @@ button a {
   opacity: 0;
   z-index: -1;
 }
+.carte__prix {
+  position: absolute;
+  right: 8%;
+  bottom: 10%;
+}
+
+.menus {
+  margin-top: 15%;
+}
+
+.menus p {
+  text-align: left;
+  margin: 0 5%;
+}
 
 .carte p {
   margin: 2% 0 5% 0;
@@ -189,7 +250,7 @@ button a {
 .footer {
   background-color: #333333;
   color: white;
-  padding: 4%;
+  padding: 2%;
   text-align: left;
 }
 

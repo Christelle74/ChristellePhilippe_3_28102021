@@ -10,12 +10,13 @@ body {
 *{box-sizing: border-box;}
 
 h1 {
-    font-size: 24px;
+    font-size: 22px;
     font-family: 'roboto';
     font-weight: bolder;
+    padding: $padding;
 }
 h2 {
-    font-size: 24px;
+    font-size: 22px;
     font-family: 'roboto';
     text-align: left;
     margin: 5%;
@@ -29,39 +30,69 @@ h3 {
 p {
     font-family: 'roboto';
     margin: 5% 0;
-    font-weight: lighter;
+    font-size: 15px;
 }
 
 
 
 /*------header------*/
+#enteteresto {
+    display: flex;
+    flex-direction: row;
+    position:relative;
+    height: 60px;
+}
 #logo img {
-    width: 50%;
+    width: 40%;
     height: 50%;
 }
-
-#recherche{
-    display: flex;
-    justify-content: center;
-    padding: 0 5% 0 0;
-    background-color: #e4e4e4;
-    box-shadow: inset 0px 1px 2px rgb(116, 116, 116);
-    margin-top: 2%;
-}
-.fas {
-    margin: 5%;
+.fleche {
+    position: absolute;
+    left: 20px;
+    color: black;
+    &:hover{
+        color: $primaire;
+    }
 }
 
-#exploration{
-    padding: $padding;
+.recherche{
     background-color: $background;
+    &__lieu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10% 0 0;
+        margin-top: 2%;
+        height: 60px;
+        background-color: #e4e4e4;
+        box-shadow: inset 0px 2px 5px rgb(185, 185, 185);
+    }
+
+    &__exploration {
+        height: 250px;
+        padding: $padding;
+        background-color: $background;
+    }
+    p {
+       font-weight: lighter; 
+       font-size: 16px;
+       padding: $padding;
+    }
+    .fas {
+        margin: 5%;
+    }
 }
+
+
+
 
 button {
-    padding: $padding;
+    padding: 4% 5%;
     border-radius: 25px;
     border: none;
     font-size: 14px;
+    font-weight: bold;
     background: $gradient;
     @include shadow;
     transform: scale(1);
@@ -83,16 +114,17 @@ button {
 }
 .element {
     text-decoration: none;
-    color: black;
-    font-weight: bold;
+    color:black;
     background-color: $background;
-    border-radius: 25px;
-    padding: 2%;
-    margin: 5%;
+    border-radius: 15px;
+    padding: 5%;
+    margin: 5% 8%;
     display: flex;
     flex-direction: row;
     align-items: center;
     box-shadow: 0 8px 10px darken($background, 8%);
+    position: relative;
+    transition: 400ms ease-in-out;
         &__numero {
             background-color: $primaire;
             padding: $padding;
@@ -100,7 +132,7 @@ button {
             height: 25px;
             border-radius: 999px;
             color: white;
-            margin: 2% 2% 2% -6%;
+            margin: 2% 2% 2% -10%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -109,18 +141,31 @@ button {
         &__icone {
             margin: 0 5%;
             color: darken($background,50%);
-        }    
+            position: absolute;
+            left : 20px;
+        }  
+        p {
+            position: absolute;
+            left: 70px;
+        }  
         &:hover{
             background-color: lighten($primaire, 35%);
-        }
+            .fas {color: $primaire;}
+            }           
 }
+
 
 #restaurants {
     background-color: $background;
     padding: $padding;
 }
+#fiche {
+    background-color: $background;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
 .carte {
-    margin: 5% 0;
+    margin: 5%;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -128,6 +173,9 @@ button {
     position: relative;
     @include shadow;
     text-align: left;
+        p {
+            font-weight: lighter; 
+        }
         &__img {
             width: 100%;
             height: 150px;
@@ -143,7 +191,7 @@ button {
             top:5%;
             right: 5%;
             background-color: $tertiaire;
-            padding: 2% 5%;
+            padding: $padding;
             border-radius: 5%;
             color:$tertiaire 10%;
             font-size: 14px;
@@ -154,7 +202,7 @@ button {
             position: absolute;
             right: 8%;
             bottom: 12%;
-            font-size: 25px;
+            font-size: 20px;
             color: white;
             transform: scale(1);
             transition: transform 400ms;
@@ -175,10 +223,20 @@ button {
                 z-index: -1;
             }
         }
+        &__prix {
+            position: absolute;
+            right: 8%;
+            bottom: 10%;
+        }
 }
+.menus {
+    margin-top: 15%;
+}
+.menus p{
+    text-align: left;
+    margin: 0 5%;
 
-
-
+}
 
 .carte p {
     margin: 2% 0 5% 0;
