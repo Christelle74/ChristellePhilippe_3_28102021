@@ -1,0 +1,222 @@
+body {
+  font-family: "roboto", "shrikhand";
+  text-align: center;
+  margin: 5% 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 24px;
+  font-family: "roboto";
+  font-weight: bolder;
+}
+
+h2 {
+  font-size: 24px;
+  font-family: "roboto";
+  text-align: left;
+  margin: 5%;
+}
+
+h3 {
+  font-size: 18px;
+  text-align: left;
+  font-weight: bold;
+  margin: 5% 0 0 0;
+}
+
+p {
+  font-family: "roboto";
+  margin: 5% 0;
+  font-weight: lighter;
+}
+
+/*------header------*/
+#logo img {
+  width: 50%;
+  height: 50%;
+}
+
+#recherche {
+  display: flex;
+  justify-content: center;
+  padding: 0 5% 0 0;
+  background-color: #e4e4e4;
+  box-shadow: inset 0px 1px 2px #747474;
+  margin-top: 2%;
+}
+
+.fas {
+  margin: 5%;
+}
+
+#exploration {
+  padding: 4%;
+  background-color: #f2f2f2;
+}
+
+button {
+  padding: 4%;
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  box-shadow: 0 5px 5px #c9c8c8;
+  transform: scale(1);
+  transition: transform 400ms;
+}
+button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 5px 2px #b2b2b2;
+}
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+#fonctionnement {
+  padding: 4%;
+}
+
+.element {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  padding: 2%;
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0 8px 10px #dedede;
+}
+.element__numero {
+  background-color: #9356DC;
+  padding: 4%;
+  width: 25px;
+  height: 25px;
+  border-radius: 999px;
+  color: white;
+  margin: 2% 2% 2% -6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.element__icone {
+  margin: 0 5%;
+  color: #737373;
+}
+.element:hover {
+  background-color: #f2eafb;
+}
+
+#restaurants {
+  background-color: #f2f2f2;
+  padding: 4%;
+}
+
+.carte {
+  margin: 5% 0;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 5px 5px #c9c8c8;
+  text-align: left;
+}
+.carte__img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.carte__details {
+  margin: 0 0 0 5%;
+}
+.carte__nv {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: #99E2D0;
+  padding: 2% 5%;
+  border-radius: 5%;
+  color: #99E2D0 10%;
+  font-size: 14px;
+  font-weight: bold;
+  color: #278870;
+}
+.carte__coeur {
+  position: absolute;
+  right: 8%;
+  bottom: 12%;
+  font-size: 25px;
+  color: white;
+  transform: scale(1);
+  transition: transform 400ms;
+  z-index: 1;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+.carte__coeur:hover {
+  color: #9356DC;
+  transform: scale(1.5);
+  text-shadow: none;
+}
+.carte__coeur:hover::after {
+  opacity: 1;
+}
+.carte__coeur::after {
+  content: "";
+  opacity: 0;
+  z-index: -1;
+}
+
+.carte p {
+  margin: 2% 0 5% 0;
+}
+
+.carte a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer {
+  background-color: #333333;
+  color: white;
+  padding: 4%;
+  text-align: left;
+}
+
+.footer h3 {
+  font-family: "shrikhand";
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  width: auto;
+}
+
+.footer li {
+  padding: 2% 0;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer i {
+  margin: 0 5% 0 0;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=style.css.map */

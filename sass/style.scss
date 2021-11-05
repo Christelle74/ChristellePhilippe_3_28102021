@@ -1,0 +1,217 @@
+@import "./utils/variables";
+
+
+body {
+    font-family: 'roboto', 'shrikhand';
+    text-align: center;
+    margin: 5% 0;
+}
+
+*{box-sizing: border-box;}
+
+h1 {
+    font-size: 24px;
+    font-family: 'roboto';
+    font-weight: bolder;
+}
+h2 {
+    font-size: 24px;
+    font-family: 'roboto';
+    text-align: left;
+    margin: 5%;
+}
+h3 {
+    font-size: 18px;
+    text-align: left;
+    font-weight: bold;
+    margin: 5% 0 0 0;
+}
+p {
+    font-family: 'roboto';
+    margin: 5% 0;
+    font-weight: lighter;
+}
+
+
+
+/*------header------*/
+#logo img {
+    width: 50%;
+    height: 50%;
+}
+
+#recherche{
+    display: flex;
+    justify-content: center;
+    padding: 0 5% 0 0;
+    background-color: #e4e4e4;
+    box-shadow: inset 0px 1px 2px rgb(116, 116, 116);
+    margin-top: 2%;
+}
+.fas {
+    margin: 5%;
+}
+
+#exploration{
+    padding: $padding;
+    background-color: $background;
+}
+
+button {
+    padding: $padding;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    background: $gradient;
+    @include shadow;
+    transform: scale(1);
+    transition: transform 400ms;
+    
+    &:hover {
+        transform: scale(1.15);
+        box-shadow: 0 5px 2px darken($background, 25%);
+    }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+}
+
+
+#fonctionnement {
+    padding: $padding;
+}
+.element {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: $background;
+    border-radius: 25px;
+    padding: 2%;
+    margin: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 8px 10px darken($background, 8%);
+        &__numero {
+            background-color: $primaire;
+            padding: $padding;
+            width: 25px;
+            height: 25px;
+            border-radius: 999px;
+            color: white;
+            margin: 2% 2% 2% -6%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+        }
+        &__icone {
+            margin: 0 5%;
+            color: darken($background,50%);
+        }    
+        &:hover{
+            background-color: lighten($primaire, 35%);
+        }
+}
+
+#restaurants {
+    background-color: $background;
+    padding: $padding;
+}
+.carte {
+    margin: 5% 0;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: relative;
+    @include shadow;
+    text-align: left;
+        &__img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius:15px;
+        }
+        &__details {
+            margin: 0 0 0 5%;
+        }
+        &__nv {
+            position: absolute;
+            top:5%;
+            right: 5%;
+            background-color: $tertiaire;
+            padding: 2% 5%;
+            border-radius: 5%;
+            color:$tertiaire 10%;
+            font-size: 14px;
+            font-weight: bold;
+            color: darken($tertiaire, 40%);
+        }
+        &__coeur {
+            position: absolute;
+            right: 8%;
+            bottom: 12%;
+            font-size: 25px;
+            color: white;
+            transform: scale(1);
+            transition: transform 400ms;
+            z-index: 1;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+            &:hover {
+                color: $primaire;
+                transform: scale(1.50);
+                text-shadow: none;
+                &::after{
+                    opacity: 1;
+                }
+                
+            }
+            &::after{
+                content: "";
+                opacity: 0;
+                z-index: -1;
+            }
+        }
+}
+
+
+
+
+.carte p {
+    margin: 2% 0 5% 0;
+}
+.carte a{
+    text-decoration: none;
+    color: black;
+}
+.footer {
+    background-color: darken($background,75%);
+    color: white;
+    padding: $padding;
+    text-align: left;
+}
+.footer h3 {
+    font-family: 'shrikhand';
+    font-size: 18px;
+    font-weight: lighter;
+}
+.footer ul{
+    list-style: none;
+    padding: 0;
+    width: auto;
+}
+.footer li{
+    padding:2% 0;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+.footer i{
+    margin: 0 5% 0 0;
+    font-size: 14px;
+}
+

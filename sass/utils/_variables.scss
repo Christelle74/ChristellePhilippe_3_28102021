@@ -1,0 +1,10 @@
+$padding : 4%;
+$margintop: 10%;
+$primaire:#9356DC;
+$secondaire: #FF79DA;
+$tertiaire: #99E2D0;
+$background: #f2f2f2;
+$gradient: linear-gradient(to top, $primaire, $secondaire);
+@mixin shadow {
+    box-shadow: 0 5px 5px rgb(201, 200, 200);
+}
