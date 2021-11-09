@@ -1,5 +1,5 @@
 @import "./utils/variables";
-
+@import "./pages/loader.scss";
 
 body {
     font-family: 'roboto', 'shrikhand';
@@ -55,6 +55,8 @@ p {
     }
 }
 
+
+/*----section recherche----*/
 .recherche{
     background-color: $background;
     &__lieu {
@@ -87,28 +89,8 @@ p {
 
 
 
-button {
-    padding: 4% 5%;
-    border-radius: 25px;
-    border: none;
-    font-size: 14px;
-    font-weight: bold;
-    background: $gradient;
-    @include shadow;
-    transform: scale(1);
-    transition: transform 400ms;
-    
-    &:hover {
-        transform: scale(1.15);
-        box-shadow: 0 5px 2px darken($background, 25%);
-    }
-        a {
-            color: white;
-            text-decoration: none;
-        }
-}
 
-
+/*----section fonctionnement page d'accueil----*/
 #fonctionnement {
     padding: $padding;
 }
@@ -126,7 +108,7 @@ button {
     position: relative;
     transition: 400ms ease-in-out;
         &__numero {
-            background-color: $primaire;
+            background-color: $primaire ;
             padding: $padding;
             width: 25px;
             height: 25px;
@@ -149,12 +131,12 @@ button {
             left: 70px;
         }  
         &:hover{
-            background-color: lighten($primaire, 35%);
+            background-color: #ddc7f8;
             .fas {color: $primaire;}
             }           
 }
 
-
+/*----- section restaurants ----*/
 #restaurants {
     background-color: $background;
     padding: $padding;
@@ -182,6 +164,9 @@ button {
             object-fit: cover;
             border-top-left-radius: 15px;
             border-top-right-radius:15px;
+            position: relative;
+        overflow: hidden;
+        aspect-ratio: 4/2;
         }
         &__details {
             margin: 0 0 0 5%;
@@ -245,11 +230,42 @@ button {
     text-decoration: none;
     color: black;
 }
+
+
+/*-----animation des cartes menus apparition progressive vers le bas-----*/
+
+
+
+/*----boutons et leur animation hover----*/
+button {
+    padding: 4% 5%;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    background: $gradient;
+    @include shadow;
+    transform: scale(1);
+    transition: transform 400ms;
+    
+    &:hover {
+        transform: scale(1.15);
+        box-shadow: 0 5px 2px darken($background, 25%);
+    }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+}
+
+/*----footer----*/
 .footer {
     background-color: darken($background,75%);
     color: white;
     padding: $padding;
     text-align: left;
+    position: absolute;
+    width: 100%;
 }
 .footer h3 {
     font-family: 'shrikhand';
