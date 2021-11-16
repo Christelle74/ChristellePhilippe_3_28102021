@@ -1,3 +1,126 @@
+@charset "UTF-8";
+.carte__coeur, .fa-heart {
+  position: absolute;
+  right: 8%;
+  bottom: 12%;
+  font-size: 20px;
+  color: white;
+  transform: scale(1);
+  transition: transform ease-in-out 500ms;
+  z-index: 1;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  /*--pour créer la bordure du coeur--*/
+}
+.carte__coeur:hover, .fa-heart:hover {
+  animation: couleur 3s;
+  transform: scale(1.2);
+  text-shadow: none;
+  cursor: pointer;
+}
+.carte__coeur:hover::after, .fa-heart:hover::after {
+  opacity: 1;
+}
+.carte__coeur::after, .fa-heart::after {
+  content: "";
+  opacity: 0;
+  z-index: -1;
+}
+
+@keyframes couleur {
+  0% {
+    color: #FF79DA;
+  }
+  30% {
+    color: linear-gradient(to top, #9356DC, #FF79DA);
+  }
+  100% {
+    color: #9356DC;
+  }
+}
+.details {
+  margin: 0 0 0 5%;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transform: scale(1);
+  transition: transform 400ms;
+  z-index: 1;
+}
+.details::after {
+  content: "";
+  opacity: 0;
+  z-index: -1;
+}
+
+.slide {
+  animation: fadeIn linear 3s;
+  transform-origin: bottom;
+  transition: translate 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    margin: 0;
+    opacity: 0;
+  }
+  100% {
+    margin: 15px 0;
+    opacity: 1;
+  }
+}
+.anim:hover .fa-check {
+  transform: rotate(360deg);
+  translate: 60px, 0;
+  transition: transform ease-in-out 0.5s;
+  opacity: 1;
+}
+
+.anim:hover .coche {
+  transition: ease-in-out 0.5s;
+  transform: scale(1);
+  opacity: 1;
+  width: 50px;
+}
+
+.details h3, .details p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.details:hover {
+  width: 80%;
+}
+
+.coche {
+  width: 0px;
+  height: 100%;
+  background-color: #99E2D0;
+  color: white;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+}
+
+.coche .fas {
+  width: 22px;
+  height: 22px;
+  padding: 3px;
+  position: absolute;
+  right: 25%;
+  bottom: 35%;
+  background-color: white;
+  border-radius: 50%;
+  color: #99E2D0;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+
 .loader {
   width: 100%;
   height: 100%;
@@ -119,8 +242,9 @@ p {
 
 .fleche {
   position: absolute;
-  left: 20px;
-  color: black;
+  left: 50px;
+  top: 20px;
+  color: #4e4e4e;
 }
 .fleche:hover {
   color: #9356DC;
@@ -137,7 +261,9 @@ p {
   align-items: center;
   padding: 0 10% 0 0;
   margin-top: 2%;
-  height: 60px;
+  height: 50px;
+  font-weight: bold;
+  font-size: 14px;
   background-color: #e4e4e4;
   box-shadow: inset 0px 2px 5px #b9b9b9;
 }
@@ -153,6 +279,51 @@ p {
 }
 .recherche .fas {
   margin: 5%;
+}
+
+button {
+  padding: 4% 5%;
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transition: transform 400ms;
+}
+button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 5px 5px #999999;
+}
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn > button {
+  padding: 4% 5%;
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transition: transform 400ms;
+}
+.btn > button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 5px 5px #999999;
+}
+.btn > button a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
 }
 
 /*----section fonctionnement page d'accueil----*/
@@ -210,37 +381,31 @@ p {
   padding: 2%;
 }
 
-#fiche {
-  background-color: #f2f2f2;
-  border-top-left-radius: 35px;
-  border-top-right-radius: 35px;
-}
-
 .carte {
-  margin: 5%;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   background-color: white;
   position: relative;
-  box-shadow: 0 5px 5px #c9c8c8;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   text-align: left;
+  margin: 10px;
 }
 .carte p {
   font-weight: lighter;
 }
+.carte__details {
+  margin: 0 0 0 5%;
+}
 .carte__img {
   width: 100%;
-  height: 150px;
+  height: 160px;
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   position: relative;
   overflow: hidden;
   aspect-ratio: 4/2;
-}
-.carte__details {
-  margin: 0 0 0 5%;
 }
 .carte__nv {
   position: absolute;
@@ -253,44 +418,112 @@ p {
   font-size: 14px;
   font-weight: bold;
   color: #278870;
-}
-.carte__coeur {
-  position: absolute;
-  right: 8%;
-  bottom: 12%;
-  font-size: 20px;
-  color: white;
-  transform: scale(1);
-  transition: transform 400ms;
   z-index: 1;
-  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-}
-.carte__coeur:hover {
-  color: #9356DC;
-  transform: scale(1.5);
-  text-shadow: none;
-}
-.carte__coeur:hover::after {
-  opacity: 1;
-}
-.carte__coeur::after {
-  content: "";
-  opacity: 0;
-  z-index: -1;
 }
 .carte__prix {
+  border-bottom: transparent !important;
+}
+
+.menu {
+  margin: 5%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+.menu p {
+  font-weight: lighter;
+}
+.menu__details {
+  margin: 0 0 0 5%;
+}
+.menu__img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  overflow: hidden;
+  aspect-ratio: 4/2;
+}
+
+#fiche {
+  background-color: #f2f2f2;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  padding: 2%;
+  margin-top: -50px;
+}
+#fiche h1 {
+  font-family: "shrikhand";
+  font-size: 24px;
+  margin: 5% 0;
+}
+#fiche h3 {
+  font-size: 16px;
+}
+
+.titre {
+  position: relative;
+}
+.titre .fa-heart {
   position: absolute;
-  right: 8%;
-  bottom: 10%;
+  top: 15px;
+  color: #f2f2f2;
 }
 
 .menus {
-  margin-top: 15%;
+  padding: 2%;
+}
+.menus p {
+  text-transform: uppercase;
+  text-align: left;
+  margin: 2px;
+  padding: 5px 0;
+}
+.menus span {
+  border-bottom: solid #99E2D0;
 }
 
-.menus p {
+.plat {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   text-align: left;
-  margin: 0 5%;
+  margin: 15px 0;
+  padding: 0 5px 5px 0;
+  width: 100%;
+}
+.plat p {
+  font-weight: lighter;
+}
+.plat__details {
+  margin: 0 0 0 5%;
+}
+.plat .details {
+  margin: 0 5px;
+}
+.plat .details h3 {
+  font-weight: 400;
+}
+
+.sousdetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+.sousdetails p {
+  text-transform: none;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.sousdetails .prix {
+  font-size: bold;
 }
 
 .carte p {
@@ -300,28 +533,6 @@ p {
 .carte a {
   text-decoration: none;
   color: black;
-}
-
-/*-----animation des cartes menus apparition progressive vers le bas-----*/
-/*----boutons et leur animation hover----*/
-button {
-  padding: 4% 5%;
-  border-radius: 25px;
-  border: none;
-  font-size: 14px;
-  font-weight: bold;
-  background: linear-gradient(to top, #9356DC, #FF79DA);
-  box-shadow: 0 5px 5px #c9c8c8;
-  transform: scale(1);
-  transition: transform 400ms;
-}
-button:hover {
-  transform: scale(1.15);
-  box-shadow: 0 5px 2px #b2b2b2;
-}
-button a {
-  color: white;
-  text-decoration: none;
 }
 
 /*----footer----*/

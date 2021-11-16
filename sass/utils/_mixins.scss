@@ -1,0 +1,46 @@
+@mixin shadow {
+    box-shadow: 0 5px 5px rgb(0,0,0, 0.2);
+}
+
+@mixin detail {
+    
+    margin: 0 0 0 5%;
+}
+
+@mixin button {
+    padding: 4% 5%;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    background: $gradient;
+    @include shadow;
+    transform: scale(1);
+    transition: transform 400ms;
+    
+    &:hover {
+        transform: scale(1.15);
+        box-shadow: 0 5px 5px darken($background, 35%);
+    }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+}
+
+@mixin carte {
+    
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: relative;
+    @include shadow;
+    text-align: left;
+        p {
+            font-weight: lighter; 
+        }
+        &__details {
+            @include detail;
+        }  
+}
