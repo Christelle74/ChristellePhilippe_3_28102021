@@ -28,7 +28,6 @@
 }
 
 @mixin carte {
-    
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -36,10 +35,26 @@
     position: relative;
     @include shadow;
     text-align: left;
+    @include desktop-min-width-992{
+        width: 0%;
+        min-width: 20%;
+        height: 220px ;
+        }
         p {
             font-weight: lighter; 
         }
         &__details {
             @include detail;
         }  
+}
+
+@mixin desktop-min-width-992 {
+    @media only screen and ( min-width : map-get($breakpoints, desktop)){
+        @content;
+    }
+}
+@mixin tab-min-width-776 {
+    @media only screen and ( min-width : map-get($breakpoints, tab)){
+        @content;
+    }
 }

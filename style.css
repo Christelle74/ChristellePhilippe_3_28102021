@@ -7,13 +7,13 @@
   /*--pour créer la bordure du coeur--*/
   transform: bottom scale(1);
   /*---depuis le bas + grossissement---*/
-  transition: all 200ms ease;
+  transition: all 1s ease;
   background: linear-gradient(75deg, #9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
 }
 .carte__coeur:hover, .fa-heart:hover {
-  animation: couleur 2s ease forwards;
+  animation: couleur 1s ease forwards;
   transform: scale(1.2);
 }
 
@@ -121,7 +121,7 @@
 }
 
 .plat:hover .carte__prix {
-  margin-right: 10%;
+  margin-right: 15%;
 }
 
 .loader {
@@ -196,7 +196,7 @@
 body {
   font-family: "roboto", "shrikhand";
   text-align: center;
-  margin: 5% 0;
+  margin: 2% 0;
 }
 
 * {
@@ -216,9 +216,14 @@ h2 {
   text-align: left;
   margin: 5%;
 }
+@media only screen and (min-width: 992px) {
+  h2 {
+    margin: 0;
+  }
+}
 
 h3 {
-  font-size: 18px;
+  font-size: 16px;
   text-align: left;
   font-weight: bold;
   margin: 5% 0 0 0;
@@ -231,22 +236,18 @@ p {
 }
 
 /*------header------*/
-#enteteresto {
-  display: flex;
-  flex-direction: row;
+header {
+  padding: 2%;
   position: relative;
-  height: 60px;
 }
 
 #logo img {
-  width: 40%;
-  height: 50%;
+  height: 30px;
 }
-
 .fleche {
   position: absolute;
-  left: 50px;
-  top: 20px;
+  left: 20px;
+  font-size: 20px;
   color: #4e4e4e;
 }
 .fleche:hover {
@@ -272,6 +273,11 @@ p {
   font-size: 14px;
   background-color: #e4e4e4;
   box-shadow: inset 0px 2px 5px #b9b9b9;
+  position: relative;
+}
+.recherche__lieu > .fa-map-marker-alt {
+  position: absolute;
+  margin-right: 150px;
 }
 .recherche__exploration {
   height: 250px;
@@ -283,8 +289,10 @@ p {
   font-size: 16px;
   padding: 2%;
 }
-.recherche .fas {
-  margin: 5%;
+@media only screen and (min-width: 992px) {
+  .recherche p {
+    padding: 0;
+  }
 }
 
 button {
@@ -307,7 +315,12 @@ button a {
   text-decoration: none;
 }
 
-.btn > button {
+.btn {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+.btn > .bouton {
   padding: 4% 5%;
   border-radius: 25px;
   border: none;
@@ -318,30 +331,25 @@ button a {
   transform: scale(1);
   transition: transform 400ms;
 }
-.btn > button:hover {
+.btn > .bouton:hover {
   transform: scale(1.15);
   box-shadow: 0 5px 5px #999999;
 }
-.btn > button a {
+.btn > .bouton a {
   color: white;
   text-decoration: none;
-}
-
-.btn {
-  display: flex;
-  justify-content: center;
-  margin: 50px;
 }
 
 /*----section fonctionnement page d'accueil----*/
 #fonctionnement {
   padding: 2%;
 }
-@media screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   #fonctionnement {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
   }
 }
 
@@ -359,6 +367,12 @@ button a {
   position: relative;
   transition: 400ms ease-in-out;
 }
+@media only screen and (min-width: 992px) {
+  .element {
+    margin: 2%;
+    padding: 4% 12%;
+  }
+}
 .element__numero {
   background-color: #9356DC;
   padding: 2%;
@@ -371,6 +385,12 @@ button a {
   justify-content: center;
   align-items: center;
   font-size: 14px;
+}
+@media only screen and (min-width: 992px) {
+  .element__numero {
+    position: absolute;
+    left: 8px;
+  }
 }
 .element__icone {
   margin: 0 5%;
@@ -393,6 +413,14 @@ button a {
 #restaurants {
   background-color: #f2f2f2;
   padding: 2%;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 992px) {
+  #restaurants {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .carte {
@@ -404,6 +432,13 @@ button a {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   text-align: left;
   margin: 10px;
+}
+@media only screen and (min-width: 992px) {
+  .carte {
+    width: 0%;
+    min-width: 20%;
+    height: 220px;
+  }
 }
 .carte p {
   font-weight: lighter;
@@ -440,6 +475,7 @@ button a {
   align-items: center;
 }
 .carte__prix {
+  font-size: 14px;
   border-bottom: transparent !important;
   margin-right: 0;
   transition: margin-right 0.5s ease-in-out;
@@ -483,8 +519,10 @@ button a {
   font-size: 24px;
   margin: 5% 0;
 }
-#fiche h3 {
-  font-size: 16px;
+@media only screen and (min-width: 992px) {
+  #fiche h1 {
+    margin: 0;
+  }
 }
 
 .titre {
@@ -499,6 +537,14 @@ button a {
 
 .menus {
   padding: 2%;
+}
+@media only screen and (min-width: 992px) {
+  .menus {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: flex-end;
+  }
 }
 .menus p {
   text-transform: uppercase;
@@ -522,32 +568,36 @@ button a {
   padding: 0 5px 5px 0;
   width: 100%;
 }
+@media only screen and (min-width: 992px) {
+  .plat {
+    width: 0%;
+    min-width: 20%;
+    height: 220px;
+  }
+}
 .plat p {
   font-weight: lighter;
 }
 .plat__details {
   padding: 2% 5%;
 }
-.plat .details {
-  margin: 0 5px;
-}
 .plat .details h3 {
   font-weight: 400;
+  margin: 2% 0 0 0;
 }
 
 .sousdetails {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
 }
 .sousdetails p {
   text-transform: none;
   margin-right: 10px;
-  font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  font-size: 14px;
 }
 .sousdetails .prix {
   font-size: bold;
@@ -566,10 +616,15 @@ button a {
 .footer {
   background-color: #333333;
   color: white;
-  padding: 2%;
+  padding: 5%;
   text-align: left;
   position: absolute;
   width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .footer {
+    height: 170px;
+  }
 }
 
 .footer h3 {
@@ -577,15 +632,31 @@ button a {
   font-size: 18px;
   font-weight: lighter;
 }
+@media only screen and (min-width: 992px) {
+  .footer h3 {
+    margin: 0;
+    text-align: center;
+  }
+}
 
 .footer ul {
   list-style: none;
   padding: 0;
   width: auto;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 992px) {
+  .footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    white-space: nowrap;
+  }
 }
 
 .footer li {
-  padding: 2% 0;
+  padding: 1% 0;
 }
 
 .footer a {
@@ -594,7 +665,7 @@ button a {
 }
 
 .footer i {
-  margin: 0 5% 0 0;
+  margin: 0 2% 0 0;
   font-size: 14px;
 }
 

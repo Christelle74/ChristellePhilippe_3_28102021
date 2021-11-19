@@ -5,3 +5,7 @@ $secondaire: #FF79DA;
 $tertiaire: #99E2D0;
 $background: #f2f2f2;
 $gradient: linear-gradient(to top, $primaire, $secondaire);
+$breakpoints: (
+    desktop: 992px,
+    tab: 776px,
+);

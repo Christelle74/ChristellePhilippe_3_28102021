@@ -1,5 +1,6 @@
 @import "./utils/variables";
 @import "./utils/mixins";
+
 @import "./composants/heart.scss";
 @import "./composants/menus.scss";
 @import "./composants/slidetop.scss";
@@ -9,7 +10,7 @@
 body {
     font-family: 'roboto', 'shrikhand';
     text-align: center;
-    margin: 5% 0;
+    margin: 2% 0;
 }
 
 *{box-sizing: border-box;}
@@ -25,9 +26,12 @@ h2 {
     font-family: 'roboto';
     text-align: left;
     margin: 5%;
+    @include desktop-min-width-992 {
+        margin: 0;
+    }
 }
 h3 {
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
     font-weight: bold;
     margin: 5% 0 0 0;
@@ -36,25 +40,25 @@ p {
     font-family: 'roboto';
     margin: 5% 0;
     font-size: 15px;
+    
 }
 
 
 
 /*------header------*/
-#enteteresto {
-    display: flex;
-    flex-direction: row;
-    position:relative;
-    height: 60px;
+header {
+    padding: $padding;
+    position: relative;
 }
 #logo img {
-    width: 40%;
-    height: 50%;
+    height: 30px;
+    @include desktop-min-width-992{
+    }
 }
 .fleche {
     position: absolute;
-    left: 50px;
-    top: 20px;
+    left: 20px;
+    font-size: 20px;
     color: rgb(78, 78, 78);
     &:hover{
         color: $primaire;
@@ -80,44 +84,53 @@ p {
         font-size: 14px;
         background-color: #e4e4e4;
         box-shadow: inset 0px 2px 5px rgb(185, 185, 185);
+        position: relative;
+        > .fa-map-marker-alt {
+            position: absolute;
+            margin-right: 150px;
+        }
     }
-
+    
     &__exploration {
         height: 250px;
         padding: $padding;
         background-color: $background;
+        
     }
     p {
        font-weight: lighter; 
        font-size: 16px;
        padding: $padding;
-    }
-    .fas {
-        margin: 5%;
+       @include desktop-min-width-992 {
+            padding: 0;
+        }
     }
 }
+    
+
 
 
 button {
     @include button;
 }
-.btn > button {
-    @include button;
-    
-}
+
 .btn {
    display: flex;
     justify-content: center; 
     margin: 50px;
+    > .bouton {
+        @include button;
+    }
 }
 
 /*----section fonctionnement page d'accueil----*/
 #fonctionnement {
     padding: $padding;
-    @media screen and (min-width:992px) {
+    @include desktop-min-width-992{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: flex-start;
+        align-items: center;
     }
 }
 .element {
@@ -133,6 +146,11 @@ button {
     box-shadow: 0 8px 10px darken($background, 8%);
     position: relative;
     transition: 400ms ease-in-out;
+    @include desktop-min-width-992 {
+        margin:2%;
+        padding: 4% 12%;
+    }    
+        
         &__numero {
             background-color: $primaire ;
             padding: $padding;
@@ -145,6 +163,10 @@ button {
             justify-content: center;
             align-items: center;
             font-size: 14px;
+            @include desktop-min-width-992 {
+                position: absolute;
+                left: 8px;
+            } 
         }
         &__icone {
             margin: 0 5%;
@@ -168,6 +190,12 @@ button {
 #restaurants {
     background-color: $background;
     padding: $padding;
+    display: flex;
+    flex-direction: column;
+    @include desktop-min-width-992 {
+        flex-direction: row;
+        align-items: center;
+    } 
 }
 
 
@@ -205,6 +233,7 @@ button {
             align-items: center;
         }
         &__prix {
+            font-size: 14px;
             border-bottom: transparent !important;
             margin-right: 0;
             transition: margin-right 0.5s ease-in-out;
@@ -248,10 +277,11 @@ button {
         font-family: 'shrikhand';
         font-size: 24px;
         margin: 5% 0;
+        @include desktop-min-width-992{
+            margin: 0;
+        }
     }
-    h3 {
-        font-size: 16px;
-    }
+    
 
 }
 
@@ -267,14 +297,22 @@ button {
 
 .menus {
     padding: $padding;
+    @include desktop-min-width-992 {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        justify-content: flex-end;
+    }
     p{
     text-transform: uppercase;
     text-align: left;
     margin: 2px;
     padding: 5px 0;
     }
+    
     span {
         border-bottom: solid  $tertiaire;
+        
     }
 }
 
@@ -284,9 +322,9 @@ button {
     padding: 0 5px 5px 0;
     width: 100%;
     .details {
-        margin:0  5px;
         h3 {
         font-weight: 400;
+        margin: 2% 0 0 0;
         }
     }
 }
@@ -294,15 +332,14 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
     
     p {
         text-transform: none;
         margin-right: 10px;
-        font-size: 14px;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+        font-size: 14px;
     }
     .prix {
         font-size: bold;
@@ -322,30 +359,45 @@ button {
 .footer {
     background-color: darken($background,75%);
     color: white;
-    padding: $padding;
+    padding: 5%;
     text-align: left;
     position: absolute;
     width: 100%;
+    @include desktop-min-width-992 {
+        height: 170px;
+    }
 }
 .footer h3 {
     font-family: 'shrikhand';
     font-size: 18px;
     font-weight: lighter;
+    @include desktop-min-width-992 {
+        margin: 0;
+        text-align: center;
+    }
 }
 .footer ul{
     list-style: none;
     padding: 0;
     width: auto;
+    display: flex;
+    flex-direction: column;
+    @include desktop-min-width-992 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        white-space: nowrap;
+    }
 }
 .footer li{
-    padding:2% 0;
+    padding:1% 0;
 }
 .footer a {
     color: white;
     text-decoration: none;
 }
 .footer i{
-    margin: 0 5% 0 0;
+    margin: 0 2% 0 0;
     font-size: 14px;
 }
 
