@@ -1,0 +1,35 @@
+/*----delai d'apparition de chaque partie"plat"---*/
+
+.plat:nth-child(1) {
+    animation-delay: .0s;
+}
+.plat:nth-child(2) {
+    animation-delay: .25s;
+}
+.plat:nth-child(3) {
+    animation-delay: .50s;
+}
+
+.plat:nth-child(4) {
+    animation-delay: .75s;
+}
+
+
+/*----animation fadeIn opacité à la verticale---*/ 
+.plat
+ {
+    opacity: 0; /*---opacité 0 pour que les plats n'apparaissent pas au chargement de la page--*/
+    animation: fadeIn forwards .75s ease-in-out; /*---forwards : conserve propriétés de l'image à 100%---*/
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

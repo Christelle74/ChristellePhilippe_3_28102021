@@ -1,59 +1,53 @@
-.anim:hover .fa-check {
-    transform: rotate(360deg);
-    translate: 60px, 0;
-    transition: transform  ease-in-out 0.5s;
-    opacity: 1;
-}
-.anim:hover .coche {
-    transition:  ease-in-out 0.5s;
-    transform: scale(1);
-    opacity: 1;
-    width: 50px;
-    
-}
-
-
-
-.details {
-    h3, p{
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        
-    }
-    &:hover{
-        width: 80%;
-    }
-}
-
 .coche {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
     width: 0px;
     height: 100%;
     background-color: $tertiaire;
-    color: white;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
-    cursor: pointer;   
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    opacity: 1;
-    transition:  ease-in-out 0.5s;
+    opacity: 0;
+    transition:  ease-in-out 0.5s; /*---permet le retour souple---*/
 }
 
 .coche .fas {
     width: 22px;
     height: 22px;
     padding: 3px;
-    position: absolute;
-    right: 25%;
-    bottom: 35%;
     background-color: white;
     border-radius: 50%;
     color: $tertiaire; 
-    opacity: 0;
+    opacity: 1;
     transition:  ease-in-out 0.5s;
 }
+
+
+.plat:hover .fa-check {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease-in-out ;
+    translate: 60px, 0;
+    opacity: 1;
+}
+
+.plat:hover .coche {
+    transition:  ease-in-out 0.5s;
+    opacity: 1;
+    width: 50px;
+
+}
+
+.plat:hover .carte__prix {
+    margin-right: 10%;
+    
+}
+
+
+
+
 
 
 

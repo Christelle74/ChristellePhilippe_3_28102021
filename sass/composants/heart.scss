@@ -1,37 +1,45 @@
 .carte__coeur, .fa-heart {
-    position: absolute;
-    right: 8%;
-    bottom: 12%;
     font-size: 20px;
-    color: white;
-    transform: scale(1);
-    transition: transform ease-in-out 500ms;
-    z-index: 1;
+    cursor: pointer;
+    position: relative;
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;  /*--pour créer la bordure du coeur--*/
+    
+    transform: bottom scale(1); /*---depuis le bas + grossissement---*/
+    transition: all 200ms ease;
+
+    background: linear-gradient(75deg,#9356DC,#FF79DA);
+        background-clip: text;
+        -webkit-background-clip:text;
+        
+    
     &:hover {
-        animation: couleur  3s;
-        transform: scale(1.2) ;
-        text-shadow: none;
-        cursor: pointer;
-        &::after{
-            opacity: 1;
-        }
-    }
-    &::after{
-        content: "";
-        opacity: 0;
-        z-index: -1;
+        animation: couleur 2s ease forwards;
+        transform: scale(1.2);
+        
     }
 }
 
 @keyframes couleur {
     0% {
-        color: #FF79DA;
+        color: $background;
     }
     30%{
-        color: linear-gradient(to top, #9356DC, #FF79DA);
+        color: white;
     }
+    
     100% {
-        color: #9356DC;
+        color:$secondaire;
+        
     }
 }
+
+
+
+
+
+
+
+
+
+
+

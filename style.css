@@ -1,44 +1,35 @@
 @charset "UTF-8";
 .carte__coeur, .fa-heart {
-  position: absolute;
-  right: 8%;
-  bottom: 12%;
   font-size: 20px;
-  color: white;
-  transform: scale(1);
-  transition: transform ease-in-out 500ms;
-  z-index: 1;
+  cursor: pointer;
+  position: relative;
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
   /*--pour créer la bordure du coeur--*/
+  transform: bottom scale(1);
+  /*---depuis le bas + grossissement---*/
+  transition: all 200ms ease;
+  background: linear-gradient(75deg, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 .carte__coeur:hover, .fa-heart:hover {
-  animation: couleur 3s;
+  animation: couleur 2s ease forwards;
   transform: scale(1.2);
-  text-shadow: none;
-  cursor: pointer;
-}
-.carte__coeur:hover::after, .fa-heart:hover::after {
-  opacity: 1;
-}
-.carte__coeur::after, .fa-heart::after {
-  content: "";
-  opacity: 0;
-  z-index: -1;
 }
 
 @keyframes couleur {
   0% {
-    color: #FF79DA;
+    color: #f2f2f2;
   }
   30% {
-    color: linear-gradient(to top, #9356DC, #FF79DA);
+    color: white;
   }
   100% {
-    color: #9356DC;
+    color: #FF79DA;
   }
 }
 .details {
-  margin: 0 0 0 5%;
+  padding: 2% 5%;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
@@ -53,72 +44,84 @@
   z-index: -1;
 }
 
-.slide {
-  animation: fadeIn linear 3s;
-  transform-origin: bottom;
-  transition: translate 3s;
+/*----delai d'apparition de chaque partie"plat"---*/
+.plat:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.plat:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.plat:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.plat:nth-child(4) {
+  animation-delay: 0.75s;
+}
+
+/*----animation fadeIn opacité à la verticale---*/
+.plat {
+  opacity: 0;
+  /*---opacité 0 pour que les plats n'apparaissent pas au chargement de la page--*/
+  animation: fadeIn forwards 0.75s ease-in-out;
+  /*---forwards : conserve propriétés de l'image à 100%---*/
 }
 
 @keyframes fadeIn {
   0% {
-    margin: 0;
     opacity: 0;
+    transform: translateY(20%);
   }
   100% {
-    margin: 15px 0;
     opacity: 1;
+    transform: translateY(0);
   }
 }
-.anim:hover .fa-check {
-  transform: rotate(360deg);
-  translate: 60px, 0;
-  transition: transform ease-in-out 0.5s;
-  opacity: 1;
-}
-
-.anim:hover .coche {
-  transition: ease-in-out 0.5s;
-  transform: scale(1);
-  opacity: 1;
-  width: 50px;
-}
-
-.details h3, .details p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.details:hover {
-  width: 80%;
-}
-
 .coche {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
   width: 0px;
   height: 100%;
   background-color: #99E2D0;
-  color: white;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
-  cursor: pointer;
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-  opacity: 1;
+  opacity: 0;
   transition: ease-in-out 0.5s;
+  /*---permet le retour souple---*/
 }
 
 .coche .fas {
   width: 22px;
   height: 22px;
   padding: 3px;
-  position: absolute;
-  right: 25%;
-  bottom: 35%;
   background-color: white;
   border-radius: 50%;
   color: #99E2D0;
-  opacity: 0;
+  opacity: 1;
   transition: ease-in-out 0.5s;
+}
+
+.plat:hover .fa-check {
+  transform: rotate(360deg);
+  transition: transform 0.5s ease-in-out;
+  translate: 60px, 0;
+  opacity: 1;
+}
+
+.plat:hover .coche {
+  transition: ease-in-out 0.5s;
+  opacity: 1;
+  width: 50px;
+}
+
+.plat:hover .carte__prix {
+  margin-right: 10%;
 }
 
 .loader {
@@ -253,14 +256,17 @@ p {
 /*----section recherche----*/
 .recherche {
   background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
 }
 .recherche__lieu {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0 10% 0 0;
-  margin-top: 2%;
+  width: 100%;
   height: 50px;
   font-weight: bold;
   font-size: 14px;
@@ -324,11 +330,19 @@ button a {
 .btn {
   display: flex;
   justify-content: center;
+  margin: 50px;
 }
 
 /*----section fonctionnement page d'accueil----*/
 #fonctionnement {
   padding: 2%;
+}
+@media screen and (min-width: 992px) {
+  #fonctionnement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 .element {
@@ -395,7 +409,7 @@ button a {
   font-weight: lighter;
 }
 .carte__details {
-  margin: 0 0 0 5%;
+  padding: 2% 5%;
 }
 .carte__img {
   width: 100%;
@@ -420,16 +434,25 @@ button a {
   color: #278870;
   z-index: 1;
 }
+.carte__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .carte__prix {
   border-bottom: transparent !important;
+  margin-right: 0;
+  transition: margin-right 0.5s ease-in-out;
+}
+.carte__coeur {
+  color: white;
+  margin-right: 20px;
 }
 
 .menu {
-  margin: 5%;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  background-color: white;
   position: relative;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   text-align: left;
@@ -438,7 +461,7 @@ button a {
   font-weight: lighter;
 }
 .menu__details {
-  margin: 0 0 0 5%;
+  padding: 2% 5%;
 }
 .menu__img {
   width: 100%;
@@ -465,12 +488,13 @@ button a {
 }
 
 .titre {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .titre .fa-heart {
-  position: absolute;
-  top: 15px;
   color: #f2f2f2;
+  margin-right: 20px;
 }
 
 .menus {
@@ -502,7 +526,7 @@ button a {
   font-weight: lighter;
 }
 .plat__details {
-  margin: 0 0 0 5%;
+  padding: 2% 5%;
 }
 .plat .details {
   margin: 0 5px;
@@ -521,6 +545,9 @@ button a {
   text-transform: none;
   margin-right: 10px;
   font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .sousdetails .prix {
   font-size: bold;
