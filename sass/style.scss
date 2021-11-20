@@ -16,22 +16,22 @@ body {
 *{box-sizing: border-box;}
 
 h1 {
-    font-size: 22px;
+    font-size: 1.5rem;
     font-family: 'roboto';
     font-weight: bolder;
     padding: $padding;
 }
 h2 {
-    font-size: 22px;
+    font-size: 1.5rem;
     font-family: 'roboto';
     text-align: left;
-    margin: 5%;
-    @include desktop-min-width-992 {
-        margin: 0;
-    }
+    margin: 2rem;
+    @include tab-min-width-776 {
+        font-size: 1.2rem;
+    }  
 }
 h3 {
-    font-size: 16px;
+    font-size: 1rem;
     text-align: left;
     font-weight: bold;
     margin: 5% 0 0 0;
@@ -39,7 +39,7 @@ h3 {
 p {
     font-family: 'roboto';
     margin: 5% 0;
-    font-size: 15px;
+    font-size: 1rem;
     
 }
 
@@ -51,7 +51,7 @@ header {
     position: relative;
 }
 #logo img {
-    height: 30px;
+    height: 2.2rem;
     @include desktop-min-width-992{
     }
 }
@@ -72,14 +72,15 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
+    margin-top: $margintop;
+    height: 20rem;
     &__lieu {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 50px;
+        height: 3rem;
         font-weight: bold;
         font-size: 14px;
         background-color: #e4e4e4;
@@ -92,14 +93,14 @@ header {
     }
     
     &__exploration {
-        height: 250px;
+        height: 20rem;
         padding: $padding;
         background-color: $background;
         
     }
     p {
        font-weight: lighter; 
-       font-size: 16px;
+       font-size: 1rem;
        padding: $padding;
        @include desktop-min-width-992 {
             padding: 0;
@@ -113,15 +114,17 @@ header {
 button {
     @include button;
 }
-
-.btn {
-   display: flex;
-    justify-content: center; 
-    margin: 50px;
-    > .bouton {
-        @include button;
+.bouton {
+    text-align: center;
+    margin: 50px 0;
+    @include tab-min-width-776 {
+        margin: 30px;
+       
     }
-}
+        
+    }
+
+
 
 /*----section fonctionnement page d'accueil----*/
 #fonctionnement {
@@ -129,7 +132,7 @@ button {
     @include desktop-min-width-992{
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
     }
 }
@@ -138,8 +141,8 @@ button {
     color:black;
     background-color: $background;
     border-radius: 15px;
-    padding: 5%;
-    margin: 5% 8%;
+    padding: 0.6rem;
+    margin: 1.2rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -147,10 +150,9 @@ button {
     position: relative;
     transition: 400ms ease-in-out;
     @include desktop-min-width-992 {
-        margin:2%;
-        padding: 4% 12%;
-    }    
-        
+        padding: 2em 10%;
+    }  
+            
         &__numero {
             background-color: $primaire ;
             padding: $padding;
@@ -158,7 +160,7 @@ button {
             height: 25px;
             border-radius: 999px;
             color: white;
-            margin: 2% 2% 2% -10%;
+            margin: 1rem 1rem 1rem -1.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -169,10 +171,11 @@ button {
             } 
         }
         &__icone {
-            margin: 0 5%;
+            margin: 1.5rem;
             color: darken($background,50%);
             position: absolute;
-            left : 20px;
+            left : 0.8rem;
+            
         }  
         p {
             position: absolute;
@@ -196,6 +199,12 @@ button {
         flex-direction: row;
         align-items: center;
     } 
+    @include tab-min-width-776 {
+        flex-direction: row ;
+        justify-content: center;
+        align-items: center;
+        
+    }
 }
 
 
@@ -205,13 +214,14 @@ button {
     margin: 10px;
         &__img {
             width: 100%;
-            height: 160px;
+            height: 8rem;
             object-fit: cover;
             border-top-left-radius: 15px;
             border-top-right-radius:15px;
             position: relative;
             overflow: hidden;
             aspect-ratio: 4/2;
+             
         }
          
         &__nv {
@@ -241,7 +251,7 @@ button {
 
         &__coeur {
             color: white;
-            margin-right: 20px;
+            margin: 2rem 1rem;
         }
 }
 
@@ -273,11 +283,15 @@ button {
     border-top-right-radius: 35px;
     padding: $padding;
     margin-top: -50px;
+    
     h1 {
         font-family: 'shrikhand';
         font-size: 24px;
         margin: 5% 0;
         @include desktop-min-width-992{
+            margin: 0;
+        }
+        @include tab-min-width-776 {
             margin: 0;
         }
     }
@@ -321,6 +335,11 @@ button {
     margin: 15px 0;
     padding: 0 5px 5px 0;
     width: 100%;
+    @include desktop-min-width-992{
+        height: auto !important;
+        margin: 10px 5px;
+        max-width: 30%;
+    }
     .details {
         h3 {
         font-weight: 400;
@@ -363,9 +382,7 @@ button {
     text-align: left;
     position: absolute;
     width: 100%;
-    @include desktop-min-width-992 {
-        height: 170px;
-    }
+    
 }
 .footer h3 {
     font-family: 'shrikhand';

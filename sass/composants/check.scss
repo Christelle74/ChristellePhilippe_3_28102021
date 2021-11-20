@@ -12,6 +12,7 @@
     border-top-right-radius: 15px;
     opacity: 0;
     transition:  ease-in-out 0.5s; /*---permet le retour souple---*/
+    -webkit-transition: ease-in-out 0.5s ;
 }
 
 .coche .fas {
@@ -23,25 +24,28 @@
     color: $tertiaire; 
     opacity: 1;
     transition:  ease-in-out 0.5s;
+    -webkit-transition: ease-in-out 0.5s ;
 }
 
 
 .plat:hover .fa-check {
     transform: rotate(360deg);
     transition: transform 0.5s ease-in-out ;
+    -webkit-transition: transform ease-in-out 0.5s ;
     translate: 60px, 0;
     opacity: 1;
 }
 
 .plat:hover .coche {
     transition:  ease-in-out 0.5s;
+    -webkit-transition: ease-in-out 0.5s ;
     opacity: 1;
     width: 50px;
 
 }
 
 .plat:hover .carte__prix {
-    margin-right: 15%;
+    margin-right: 35px;
     
 }
 

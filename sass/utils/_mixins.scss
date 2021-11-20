@@ -7,7 +7,7 @@
 }
 
 @mixin button {
-    padding: 4% 5%;
+    padding: 1rem 2rem ;
     border-radius: 25px;
     border: none;
     font-size: 14px;
@@ -35,11 +35,7 @@
     position: relative;
     @include shadow;
     text-align: left;
-    @include desktop-min-width-992{
-        width: 0%;
-        min-width: 20%;
-        height: 220px ;
-        }
+    
         p {
             font-weight: lighter; 
         }

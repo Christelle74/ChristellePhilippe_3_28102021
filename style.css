@@ -94,6 +94,7 @@
   opacity: 0;
   transition: ease-in-out 0.5s;
   /*---permet le retour souple---*/
+  -webkit-transition: ease-in-out 0.5s;
 }
 
 .coche .fas {
@@ -105,23 +106,26 @@
   color: #99E2D0;
   opacity: 1;
   transition: ease-in-out 0.5s;
+  -webkit-transition: ease-in-out 0.5s;
 }
 
 .plat:hover .fa-check {
   transform: rotate(360deg);
   transition: transform 0.5s ease-in-out;
+  -webkit-transition: transform ease-in-out 0.5s;
   translate: 60px, 0;
   opacity: 1;
 }
 
 .plat:hover .coche {
   transition: ease-in-out 0.5s;
+  -webkit-transition: ease-in-out 0.5s;
   opacity: 1;
   width: 50px;
 }
 
 .plat:hover .carte__prix {
-  margin-right: 15%;
+  margin-right: 35px;
 }
 
 .loader {
@@ -204,26 +208,26 @@ body {
 }
 
 h1 {
-  font-size: 22px;
+  font-size: 1.5rem;
   font-family: "roboto";
   font-weight: bolder;
-  padding: 2%;
+  padding: 0.5rem;
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 1.5rem;
   font-family: "roboto";
   text-align: left;
-  margin: 5%;
+  margin: 2rem;
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 776px) {
   h2 {
-    margin: 0;
+    font-size: 1.2rem;
   }
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 1rem;
   text-align: left;
   font-weight: bold;
   margin: 5% 0 0 0;
@@ -232,17 +236,17 @@ h3 {
 p {
   font-family: "roboto";
   margin: 5% 0;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 /*------header------*/
 header {
-  padding: 2%;
+  padding: 0.5rem;
   position: relative;
 }
 
 #logo img {
-  height: 30px;
+  height: 2.2rem;
 }
 .fleche {
   position: absolute;
@@ -260,7 +264,8 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 1rem;
+  height: 20rem;
 }
 .recherche__lieu {
   display: flex;
@@ -268,7 +273,7 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 3rem;
   font-weight: bold;
   font-size: 14px;
   background-color: #e4e4e4;
@@ -280,14 +285,14 @@ header {
   margin-right: 150px;
 }
 .recherche__exploration {
-  height: 250px;
-  padding: 2%;
+  height: 20rem;
+  padding: 0.5rem;
   background-color: #f2f2f2;
 }
 .recherche p {
   font-weight: lighter;
-  font-size: 16px;
-  padding: 2%;
+  font-size: 1rem;
+  padding: 0.5rem;
 }
 @media only screen and (min-width: 992px) {
   .recherche p {
@@ -296,7 +301,7 @@ header {
 }
 
 button {
-  padding: 4% 5%;
+  padding: 1rem 2rem;
   border-radius: 25px;
   border: none;
   font-size: 14px;
@@ -315,40 +320,25 @@ button a {
   text-decoration: none;
 }
 
-.btn {
-  display: flex;
-  justify-content: center;
-  margin: 50px;
+.bouton {
+  text-align: center;
+  margin: 50px 0;
 }
-.btn > .bouton {
-  padding: 4% 5%;
-  border-radius: 25px;
-  border: none;
-  font-size: 14px;
-  font-weight: bold;
-  background: linear-gradient(to top, #9356DC, #FF79DA);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-  transform: scale(1);
-  transition: transform 400ms;
-}
-.btn > .bouton:hover {
-  transform: scale(1.15);
-  box-shadow: 0 5px 5px #999999;
-}
-.btn > .bouton a {
-  color: white;
-  text-decoration: none;
+@media only screen and (min-width: 776px) {
+  .bouton {
+    margin: 30px;
+  }
 }
 
 /*----section fonctionnement page d'accueil----*/
 #fonctionnement {
-  padding: 2%;
+  padding: 0.5rem;
 }
 @media only screen and (min-width: 992px) {
   #fonctionnement {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
   }
 }
@@ -358,8 +348,8 @@ button a {
   color: black;
   background-color: #f2f2f2;
   border-radius: 15px;
-  padding: 5%;
-  margin: 5% 8%;
+  padding: 0.6rem;
+  margin: 1.2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -369,18 +359,17 @@ button a {
 }
 @media only screen and (min-width: 992px) {
   .element {
-    margin: 2%;
-    padding: 4% 12%;
+    padding: 2em 10%;
   }
 }
 .element__numero {
   background-color: #9356DC;
-  padding: 2%;
+  padding: 0.5rem;
   width: 25px;
   height: 25px;
   border-radius: 999px;
   color: white;
-  margin: 2% 2% 2% -10%;
+  margin: 1rem 1rem 1rem -1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -393,10 +382,10 @@ button a {
   }
 }
 .element__icone {
-  margin: 0 5%;
+  margin: 1.5rem;
   color: #737373;
   position: absolute;
-  left: 20px;
+  left: 0.8rem;
 }
 .element p {
   position: absolute;
@@ -412,13 +401,20 @@ button a {
 /*----- section restaurants ----*/
 #restaurants {
   background-color: #f2f2f2;
-  padding: 2%;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
 }
 @media only screen and (min-width: 992px) {
   #restaurants {
     flex-direction: row;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 776px) {
+  #restaurants {
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
   }
 }
@@ -433,13 +429,6 @@ button a {
   text-align: left;
   margin: 10px;
 }
-@media only screen and (min-width: 992px) {
-  .carte {
-    width: 0%;
-    min-width: 20%;
-    height: 220px;
-  }
-}
 .carte p {
   font-weight: lighter;
 }
@@ -448,7 +437,7 @@ button a {
 }
 .carte__img {
   width: 100%;
-  height: 160px;
+  height: 8rem;
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -461,7 +450,7 @@ button a {
   top: 5%;
   right: 5%;
   background-color: #99E2D0;
-  padding: 2%;
+  padding: 0.5rem;
   border-radius: 5%;
   color: #99E2D0 10%;
   font-size: 14px;
@@ -482,7 +471,7 @@ button a {
 }
 .carte__coeur {
   color: white;
-  margin-right: 20px;
+  margin: 2rem 1rem;
 }
 
 .menu {
@@ -511,7 +500,7 @@ button a {
   background-color: #f2f2f2;
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
-  padding: 2%;
+  padding: 0.5rem;
   margin-top: -50px;
 }
 #fiche h1 {
@@ -520,6 +509,11 @@ button a {
   margin: 5% 0;
 }
 @media only screen and (min-width: 992px) {
+  #fiche h1 {
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 776px) {
   #fiche h1 {
     margin: 0;
   }
@@ -536,7 +530,7 @@ button a {
 }
 
 .menus {
-  padding: 2%;
+  padding: 0.5rem;
 }
 @media only screen and (min-width: 992px) {
   .menus {
@@ -568,18 +562,18 @@ button a {
   padding: 0 5px 5px 0;
   width: 100%;
 }
-@media only screen and (min-width: 992px) {
-  .plat {
-    width: 0%;
-    min-width: 20%;
-    height: 220px;
-  }
-}
 .plat p {
   font-weight: lighter;
 }
 .plat__details {
   padding: 2% 5%;
+}
+@media only screen and (min-width: 992px) {
+  .plat {
+    height: auto !important;
+    margin: 10px 5px;
+    max-width: 30%;
+  }
 }
 .plat .details h3 {
   font-weight: 400;
@@ -620,11 +614,6 @@ button a {
   text-align: left;
   position: absolute;
   width: 100%;
-}
-@media only screen and (min-width: 992px) {
-  .footer {
-    height: 170px;
-  }
 }
 
 .footer h3 {
