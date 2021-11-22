@@ -1,0 +1,43 @@
+/*----footer----*/
+.footer {
+    background-color: darken($background,75%);
+    color: white;
+    padding: 5%;
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    
+}
+.footer h3 {
+    font-family: 'shrikhand';
+    font-size: 18px;
+    font-weight: lighter;
+    @include desktop-min-width-992 {
+        margin: 0;
+        text-align: center;
+    }
+}
+.footer ul{
+    list-style: none;
+    padding: 0;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    @include desktop-min-width-992 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        white-space: nowrap;
+    }
+}
+.footer li{
+    padding:1% 0;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+.footer i{
+    margin: 0 2% 0 0;
+    font-size: 14px;
+}

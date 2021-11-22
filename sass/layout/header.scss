@@ -1,0 +1,19 @@
+/*------header------*/
+header {
+    padding: $padding;
+    position: relative;
+}
+#logo img {
+    height: 2.2rem;
+    @include desktop-min-width-992{
+    }
+}
+.fleche {
+    position: absolute;
+    left: 20px;
+    font-size: 20px;
+    color: rgb(78, 78, 78);
+    &:hover{
+        color: $primaire;
+    }
+}

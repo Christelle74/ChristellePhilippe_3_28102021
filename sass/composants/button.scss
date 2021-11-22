@@ -1,0 +1,11 @@
+button {
+    @include button;
+}
+.bouton {
+    text-align: center;
+    margin: 50px 0;
+    @include tab-min-width-776 {
+        margin: 30px;
+       
+    }
+}

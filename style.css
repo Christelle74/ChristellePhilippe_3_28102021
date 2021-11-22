@@ -1,4 +1,76 @@
 @charset "UTF-8";
+body {
+  font-family: "roboto", "shrikhand";
+  text-align: center;
+  margin: 2% 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-family: "roboto";
+  font-weight: bolder;
+  padding: 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-family: "roboto";
+  text-align: left;
+  margin: 2rem;
+}
+@media only screen and (min-width: 776px) {
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+h3 {
+  font-size: 1rem;
+  text-align: left;
+  font-weight: bold;
+  margin: 5% 0 0 0;
+}
+
+p {
+  font-family: "roboto";
+  margin: 5% 0;
+  font-size: 1rem;
+}
+
+button {
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transition: transform 400ms;
+}
+button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 5px 5px #999999;
+}
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+.bouton {
+  text-align: center;
+  margin: 50px 0;
+}
+@media only screen and (min-width: 776px) {
+  .bouton {
+    margin: 30px;
+  }
+}
+
 .carte__coeur, .fa-heart {
   font-size: 20px;
   cursor: pointer;
@@ -28,22 +100,6 @@
     color: #FF79DA;
   }
 }
-.details {
-  padding: 2% 5%;
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  transform: scale(1);
-  transition: transform 400ms;
-  z-index: 1;
-}
-.details::after {
-  content: "";
-  opacity: 0;
-  z-index: -1;
-}
-
 /*----delai d'apparition de chaque partie"plat"---*/
 .plat:nth-child(1) {
   animation-delay: 0s;
@@ -128,6 +184,77 @@
   margin-right: 35px;
 }
 
+/*------header------*/
+header {
+  padding: 0.5rem;
+  position: relative;
+}
+
+#logo img {
+  height: 2.2rem;
+}
+.fleche {
+  position: absolute;
+  left: 20px;
+  font-size: 20px;
+  color: #4e4e4e;
+}
+.fleche:hover {
+  color: #9356DC;
+}
+
+/*----footer----*/
+.footer {
+  background-color: #333333;
+  color: white;
+  padding: 5%;
+  text-align: left;
+  position: absolute;
+  width: 100%;
+}
+
+.footer h3 {
+  font-family: "shrikhand";
+  font-size: 18px;
+  font-weight: lighter;
+}
+@media only screen and (min-width: 992px) {
+  .footer h3 {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 992px) {
+  .footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    white-space: nowrap;
+  }
+}
+
+.footer li {
+  padding: 1% 0;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer i {
+  margin: 0 2% 0 0;
+  font-size: 14px;
+}
+
 .loader {
   width: 100%;
   height: 100%;
@@ -197,67 +324,6 @@
     text-shadow: 0 -30px #99E2D0, 0 -100px #9356DC;
   }
 }
-body {
-  font-family: "roboto", "shrikhand";
-  text-align: center;
-  margin: 2% 0;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-h1 {
-  font-size: 1.5rem;
-  font-family: "roboto";
-  font-weight: bolder;
-  padding: 0.5rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-family: "roboto";
-  text-align: left;
-  margin: 2rem;
-}
-@media only screen and (min-width: 776px) {
-  h2 {
-    font-size: 1.2rem;
-  }
-}
-
-h3 {
-  font-size: 1rem;
-  text-align: left;
-  font-weight: bold;
-  margin: 5% 0 0 0;
-}
-
-p {
-  font-family: "roboto";
-  margin: 5% 0;
-  font-size: 1rem;
-}
-
-/*------header------*/
-header {
-  padding: 0.5rem;
-  position: relative;
-}
-
-#logo img {
-  height: 2.2rem;
-}
-.fleche {
-  position: absolute;
-  left: 20px;
-  font-size: 20px;
-  color: #4e4e4e;
-}
-.fleche:hover {
-  color: #9356DC;
-}
-
 /*----section recherche----*/
 .recherche {
   background-color: #f2f2f2;
@@ -297,36 +363,6 @@ header {
 @media only screen and (min-width: 992px) {
   .recherche p {
     padding: 0;
-  }
-}
-
-button {
-  padding: 1rem 2rem;
-  border-radius: 25px;
-  border: none;
-  font-size: 14px;
-  font-weight: bold;
-  background: linear-gradient(to top, #9356DC, #FF79DA);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-  transform: scale(1);
-  transition: transform 400ms;
-}
-button:hover {
-  transform: scale(1.15);
-  box-shadow: 0 5px 5px #999999;
-}
-button a {
-  color: white;
-  text-decoration: none;
-}
-
-.bouton {
-  text-align: center;
-  margin: 50px 0;
-}
-@media only screen and (min-width: 776px) {
-  .bouton {
-    margin: 30px;
   }
 }
 
@@ -419,6 +455,7 @@ button a {
   }
 }
 
+/*---- articles carte ----*/
 .carte {
   border-radius: 15px;
   display: flex;
@@ -472,6 +509,15 @@ button a {
 .carte__coeur {
   color: white;
   margin: 2rem 1rem;
+}
+
+.carte p {
+  margin: 2% 0 5% 0;
+}
+
+.carte a {
+  text-decoration: none;
+  color: black;
 }
 
 .menu {
@@ -575,9 +621,24 @@ button a {
     max-width: 30%;
   }
 }
+.plat .details {
+  padding: 2% 5%;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transform: scale(1);
+  transition: transform 400ms;
+  z-index: 1;
+}
 .plat .details h3 {
   font-weight: 400;
   margin: 2% 0 0 0;
+}
+.plat .details::after {
+  content: "";
+  opacity: 0;
+  z-index: -1;
 }
 
 .sousdetails {
@@ -595,67 +656,6 @@ button a {
 }
 .sousdetails .prix {
   font-size: bold;
-}
-
-.carte p {
-  margin: 2% 0 5% 0;
-}
-
-.carte a {
-  text-decoration: none;
-  color: black;
-}
-
-/*----footer----*/
-.footer {
-  background-color: #333333;
-  color: white;
-  padding: 5%;
-  text-align: left;
-  position: absolute;
-  width: 100%;
-}
-
-.footer h3 {
-  font-family: "shrikhand";
-  font-size: 18px;
-  font-weight: lighter;
-}
-@media only screen and (min-width: 992px) {
-  .footer h3 {
-    margin: 0;
-    text-align: center;
-  }
-}
-
-.footer ul {
-  list-style: none;
-  padding: 0;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-}
-@media only screen and (min-width: 992px) {
-  .footer ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    white-space: nowrap;
-  }
-}
-
-.footer li {
-  padding: 1% 0;
-}
-
-.footer a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer i {
-  margin: 0 2% 0 0;
-  font-size: 14px;
 }
 
 /*# sourceMappingURL=style.css.map */

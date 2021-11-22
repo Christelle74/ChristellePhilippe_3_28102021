@@ -1,420 +1,43 @@
 @import "./utils/variables";
 @import "./utils/mixins";
-
+@import "./globals/bases.scss";
+@import "./composants/button.scss";
 @import "./composants/heart.scss";
-@import "./composants/menus.scss";
+
 @import "./composants/slidetop.scss";
 @import "./composants/check.scss";
+@import "./layout/header.scss";
+@import "./layout/footer.scss";
 @import "./pages/loader.scss";
-
-body {
-    font-family: 'roboto', 'shrikhand';
-    text-align: center;
-    margin: 2% 0;
-}
-
-*{box-sizing: border-box;}
-
-h1 {
-    font-size: 1.5rem;
-    font-family: 'roboto';
-    font-weight: bolder;
-    padding: $padding;
-}
-h2 {
-    font-size: 1.5rem;
-    font-family: 'roboto';
-    text-align: left;
-    margin: 2rem;
-    @include tab-min-width-776 {
-        font-size: 1.2rem;
-    }  
-}
-h3 {
-    font-size: 1rem;
-    text-align: left;
-    font-weight: bold;
-    margin: 5% 0 0 0;
-}
-p {
-    font-family: 'roboto';
-    margin: 5% 0;
-    font-size: 1rem;
-    
-}
+@import "./pages/index.scss";
+@import "./pages/restaurants.scss";
 
 
 
-/*------header------*/
-header {
-    padding: $padding;
-    position: relative;
-}
-#logo img {
-    height: 2.2rem;
-    @include desktop-min-width-992{
-    }
-}
-.fleche {
-    position: absolute;
-    left: 20px;
-    font-size: 20px;
-    color: rgb(78, 78, 78);
-    &:hover{
-        color: $primaire;
-    }
-}
 
 
-/*----section recherche----*/
-.recherche{
-    background-color: $background;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: $margintop;
-    height: 20rem;
-    &__lieu {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 3rem;
-        font-weight: bold;
-        font-size: 14px;
-        background-color: #e4e4e4;
-        box-shadow: inset 0px 2px 5px rgb(185, 185, 185);
-        position: relative;
-        > .fa-map-marker-alt {
-            position: absolute;
-            margin-right: 150px;
-        }
-    }
-    
-    &__exploration {
-        height: 20rem;
-        padding: $padding;
-        background-color: $background;
-        
-    }
-    p {
-       font-weight: lighter; 
-       font-size: 1rem;
-       padding: $padding;
-       @include desktop-min-width-992 {
-            padding: 0;
-        }
-    }
-}
+
+
+
+
     
 
 
 
-button {
-    @include button;
-}
-.bouton {
-    text-align: center;
-    margin: 50px 0;
-    @include tab-min-width-776 {
-        margin: 30px;
-       
-    }
-        
-    }
 
 
 
-/*----section fonctionnement page d'accueil----*/
-#fonctionnement {
-    padding: $padding;
-    @include desktop-min-width-992{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-}
-.element {
-    text-decoration: none;
-    color:black;
-    background-color: $background;
-    border-radius: 15px;
-    padding: 0.6rem;
-    margin: 1.2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    box-shadow: 0 8px 10px darken($background, 8%);
-    position: relative;
-    transition: 400ms ease-in-out;
-    @include desktop-min-width-992 {
-        padding: 2em 10%;
-    }  
-            
-        &__numero {
-            background-color: $primaire ;
-            padding: $padding;
-            width: 25px;
-            height: 25px;
-            border-radius: 999px;
-            color: white;
-            margin: 1rem 1rem 1rem -1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            @include desktop-min-width-992 {
-                position: absolute;
-                left: 8px;
-            } 
-        }
-        &__icone {
-            margin: 1.5rem;
-            color: darken($background,50%);
-            position: absolute;
-            left : 0.8rem;
-            
-        }  
-        p {
-            position: absolute;
-            left: 70px;
-        }  
-        &:hover{
-            background-color: #ddc7f8;
-            .fas {color: $primaire;}
-            } 
-    
-    
-}
-
-/*----- section restaurants ----*/
-#restaurants {
-    background-color: $background;
-    padding: $padding;
-    display: flex;
-    flex-direction: column;
-    @include desktop-min-width-992 {
-        flex-direction: row;
-        align-items: center;
-    } 
-    @include tab-min-width-776 {
-        flex-direction: row ;
-        justify-content: center;
-        align-items: center;
-        
-    }
-}
 
 
 
-.carte {
-    @include carte;
-    margin: 10px;
-        &__img {
-            width: 100%;
-            height: 8rem;
-            object-fit: cover;
-            border-top-left-radius: 15px;
-            border-top-right-radius:15px;
-            position: relative;
-            overflow: hidden;
-            aspect-ratio: 4/2;
-             
-        }
-         
-        &__nv {
-            position: absolute;
-            top:5%;
-            right: 5%;
-            background-color: $tertiaire;
-            padding: $padding;
-            border-radius: 5%;
-            color:$tertiaire 10%;
-            font-size: 14px;
-            font-weight: bold;
-            color: darken($tertiaire, 40%);
-            z-index: 1;
-        }
-        &__info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        &__prix {
-            font-size: 14px;
-            border-bottom: transparent !important;
-            margin-right: 0;
-            transition: margin-right 0.5s ease-in-out;
-        }
-
-        &__coeur {
-            color: white;
-            margin: 2rem 1rem;
-        }
-}
-
-.menu {
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    @include shadow;
-    text-align: left;
-        p {
-            font-weight: lighter; 
-        }
-        &__details {
-            @include detail;
-        }  
-    &__img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        overflow: hidden;
-        aspect-ratio: 4/2;
-    }
-    
-}
-#fiche {
-    background-color: $background;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px;
-    padding: $padding;
-    margin-top: -50px;
-    
-    h1 {
-        font-family: 'shrikhand';
-        font-size: 24px;
-        margin: 5% 0;
-        @include desktop-min-width-992{
-            margin: 0;
-        }
-        @include tab-min-width-776 {
-            margin: 0;
-        }
-    }
-    
-
-}
-
-.titre{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  
-    & .fa-heart {
-    color: $background;
-    margin-right: 20px;
-    }
-}
-
-.menus {
-    padding: $padding;
-    @include desktop-min-width-992 {
-        display: flex;
-        align-items: center;
-        padding: 0;
-        justify-content: flex-end;
-    }
-    p{
-    text-transform: uppercase;
-    text-align: left;
-    margin: 2px;
-    padding: 5px 0;
-    }
-    
-    span {
-        border-bottom: solid  $tertiaire;
-        
-    }
-}
-
-.plat {
-    @include carte;
-    margin: 15px 0;
-    padding: 0 5px 5px 0;
-    width: 100%;
-    @include desktop-min-width-992{
-        height: auto !important;
-        margin: 10px 5px;
-        max-width: 30%;
-    }
-    .details {
-        h3 {
-        font-weight: 400;
-        margin: 2% 0 0 0;
-        }
-    }
-}
-.sousdetails {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    p {
-        text-transform: none;
-        margin-right: 10px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        font-size: 14px;
-    }
-    .prix {
-        font-size: bold;
-    }
-}
-.carte p {
-    margin: 2% 0 5% 0;
-}
-.carte a{
-    text-decoration: none;
-    color: black;
-}
 
 
 
-/*----footer----*/
-.footer {
-    background-color: darken($background,75%);
-    color: white;
-    padding: 5%;
-    text-align: left;
-    position: absolute;
-    width: 100%;
-    
-}
-.footer h3 {
-    font-family: 'shrikhand';
-    font-size: 18px;
-    font-weight: lighter;
-    @include desktop-min-width-992 {
-        margin: 0;
-        text-align: center;
-    }
-}
-.footer ul{
-    list-style: none;
-    padding: 0;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    @include desktop-min-width-992 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        white-space: nowrap;
-    }
-}
-.footer li{
-    padding:1% 0;
-}
-.footer a {
-    color: white;
-    text-decoration: none;
-}
-.footer i{
-    margin: 0 2% 0 0;
-    font-size: 14px;
-}
+
+
+
+
+
+
+
 

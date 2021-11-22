@@ -1,0 +1,174 @@
+/*----section recherche----*/
+.recherche{
+    background-color: $background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: $margintop;
+    height: 20rem;
+    &__lieu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 3rem;
+        font-weight: bold;
+        font-size: 14px;
+        background-color: #e4e4e4;
+        box-shadow: inset 0px 2px 5px rgb(185, 185, 185);
+        position: relative;
+        > .fa-map-marker-alt {
+            position: absolute;
+            margin-right: 150px;
+        }
+    }
+    
+    &__exploration {
+        height: 20rem;
+        padding: $padding;
+        background-color: $background;
+        
+    }
+    p {
+       font-weight: lighter; 
+       font-size: 1rem;
+       padding: $padding;
+       @include desktop-min-width-992 {
+            padding: 0;
+        }
+    }
+}
+
+
+/*----section fonctionnement page d'accueil----*/
+#fonctionnement {
+    padding: $padding;
+    @include desktop-min-width-992{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.element {
+    text-decoration: none;
+    color:black;
+    background-color: $background;
+    border-radius: 15px;
+    padding: 0.6rem;
+    margin: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 8px 10px darken($background, 8%);
+    position: relative;
+    transition: 400ms ease-in-out;
+    @include desktop-min-width-992 {
+        padding: 2em 10%;
+    }  
+            
+        &__numero {
+            background-color: $primaire ;
+            padding: $padding;
+            width: 25px;
+            height: 25px;
+            border-radius: 999px;
+            color: white;
+            margin: 1rem 1rem 1rem -1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            @include desktop-min-width-992 {
+                position: absolute;
+                left: 8px;
+            } 
+        }
+        &__icone {
+            margin: 1.5rem;
+            color: darken($background,50%);
+            position: absolute;
+            left : 0.8rem;
+            
+        }  
+        p {
+            position: absolute;
+            left: 70px;
+        }  
+        &:hover{
+            background-color: #ddc7f8;
+            .fas {color: $primaire;}
+            } 
+}
+
+/*----- section restaurants ----*/
+#restaurants {
+    background-color: $background;
+    padding: $padding;
+    display: flex;
+    flex-direction: column;
+    @include desktop-min-width-992 {
+        flex-direction: row;
+        align-items: center;
+    } 
+    @include tab-min-width-776 {
+        flex-direction: row ;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
+
+
+/*---- articles carte ----*/
+.carte {
+    @include carte;
+    margin: 10px;
+        &__img {
+            width: 100%;
+            height: 8rem;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius:15px;
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/2;
+        }
+        &__nv {
+            position: absolute;
+            top:5%;
+            right: 5%;
+            background-color: $tertiaire;
+            padding: $padding;
+            border-radius: 5%;
+            color:$tertiaire 10%;
+            font-size: 14px;
+            font-weight: bold;
+            color: darken($tertiaire, 40%);
+            z-index: 1;
+        }
+        &__info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__prix {
+            font-size: 14px;
+            border-bottom: transparent !important;
+            margin-right: 0;
+            transition: margin-right 0.5s ease-in-out;
+        }
+        &__coeur {
+            color: white;
+            margin: 2rem 1rem;
+        }
+}
+.carte p {
+    margin: 2% 0 5% 0;
+}
+.carte a{
+    text-decoration: none;
+    color: black;
+}
