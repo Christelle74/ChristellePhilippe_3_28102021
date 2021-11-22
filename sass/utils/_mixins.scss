@@ -8,12 +8,16 @@
 
 @mixin button {
     padding: 1rem 2rem ;
+    margin: 20px;
     border-radius: 25px;
     border: none;
     font-size: 14px;
     font-weight: bold;
     background: $gradient;
     @include shadow;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
     transform: scale(1);
     transition: transform 400ms;
     
@@ -21,10 +25,6 @@
         transform: scale(1.15);
         box-shadow: 0 5px 5px darken($background, 35%);
     }
-        a {
-            color: white;
-            text-decoration: none;
-        }
 }
 
 @mixin carte {

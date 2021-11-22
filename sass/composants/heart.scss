@@ -4,9 +4,10 @@
     position: relative;
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;  /*--pour créer la bordure du coeur--*/
     
+}
+   .fa-heart {
     transition: color 1s ease;
-
-    &::after {
+        &::after {
         content: "\f004";
         position: absolute;
         top: 0;

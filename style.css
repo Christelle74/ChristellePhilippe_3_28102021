@@ -43,12 +43,16 @@ p {
 
 button {
   padding: 1rem 2rem;
+  margin: 20px;
   border-radius: 25px;
   border: none;
   font-size: 14px;
   font-weight: bold;
   background: linear-gradient(to top, #9356DC, #FF79DA);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
   transform: scale(1);
   transition: transform 400ms;
 }
@@ -56,14 +60,12 @@ button:hover {
   transform: scale(1.15);
   box-shadow: 0 5px 5px #999999;
 }
-button a {
-  color: white;
-  text-decoration: none;
-}
 
 .bouton {
   text-align: center;
-  margin: 50px 0;
+  margin: 3rem;
+  text-decoration: none;
+  color: white;
 }
 @media only screen and (min-width: 776px) {
   .bouton {
@@ -77,9 +79,12 @@ button a {
   position: relative;
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
   /*--pour créer la bordure du coeur--*/
+}
+
+.fa-heart {
   transition: color 1s ease;
 }
-.carte__coeur::after, .fa-heart::after {
+.fa-heart::after {
   content: "\f004";
   position: absolute;
   top: 0;
@@ -87,11 +92,11 @@ button a {
   color: #FF79DA;
   opacity: 0;
 }
-.carte__coeur:hover, .fa-heart:hover {
+.fa-heart:hover {
   opacity: 1;
   transition: couleur 1s ease forwards;
 }
-.carte__coeur:hover::after, .fa-heart:hover::after {
+.fa-heart:hover::after {
   opacity: 1;
   animation: couleur 1s ease-in-out;
 }
