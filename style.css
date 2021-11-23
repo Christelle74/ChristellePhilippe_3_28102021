@@ -43,7 +43,7 @@ p {
 
 button {
   padding: 1rem 2rem;
-  margin: 20px;
+  margin: 1rem;
   border-radius: 25px;
   border: none;
   font-size: 14px;
@@ -63,7 +63,6 @@ button:hover {
 
 .bouton {
   text-align: center;
-  margin: 3rem;
   text-decoration: none;
   color: white;
 }
@@ -71,6 +70,14 @@ button:hover {
   .bouton {
     margin: 30px;
   }
+}
+
+/*--- bouton des pages restaurant : espace et padding---*/
+#fiche > .bouton {
+  margin: 3rem auto;
+}
+#fiche > .bouton > .bouton {
+  padding: 1rem 5rem;
 }
 
 .carte__coeur, .fa-heart {
@@ -94,11 +101,11 @@ button:hover {
 }
 .fa-heart:hover {
   opacity: 1;
-  transition: couleur 1s ease forwards;
+  transition: couleur 1s ease;
 }
 .fa-heart:hover::after {
   opacity: 1;
-  animation: couleur 1s ease-in-out;
+  animation: couleur 1s ease-in-out forwards;
 }
 
 @keyframes couleur {
@@ -138,7 +145,7 @@ button:hover {
   opacity: 0;
   /*---opacité 0 pour que les plats n'apparaissent pas au chargement de la page--*/
   animation: fadeIn forwards 0.75s ease-in-out;
-  /*---forwards : conserve propriétés de l'image à 100%---*/
+  /*---forwards : conserve propriétés de l'image à 100% de l'animation---*/
 }
 
 @keyframes fadeIn {
@@ -152,23 +159,28 @@ button:hover {
   }
 }
 .coche {
+  /*---pour aligner les éléments  check---*/
   display: flex;
   justify-content: center;
   align-items: center;
+  /*--- pour positionner l'élément sur le coté droit---*/
   position: absolute;
   right: 0;
   bottom: 0;
+  /*---mise en forme---*/
   width: 0px;
   height: 100%;
   background-color: #99E2D0;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
+  /*---animation de l'élément ---*/
   opacity: 0;
   transition: ease-in-out 0.5s;
   /*---permet le retour souple---*/
   -webkit-transition: ease-in-out 0.5s;
 }
 
+/*--- mise en forme et animation du check---*/
 .coche .fas {
   width: 22px;
   height: 22px;
@@ -183,20 +195,20 @@ button:hover {
 
 .plat:hover .fa-check {
   transform: rotate(360deg);
-  transition: transform 0.5s ease-in-out;
-  -webkit-transition: transform ease-in-out 0.5s;
-  translate: 60px, 0;
-  opacity: 1;
 }
 
 .plat:hover .coche {
-  transition: ease-in-out 0.5s;
-  -webkit-transition: ease-in-out 0.5s;
   opacity: 1;
   width: 50px;
 }
 
+/*--- déplacement du prix au hover---*/
 .plat:hover .carte__prix {
+  margin-right: 35px;
+}
+
+/*--- déplacement du titre au hover si cela est nécessaire---*/
+.plat:hover .details h3 {
   margin-right: 35px;
 }
 
@@ -271,52 +283,69 @@ header {
   font-size: 14px;
 }
 
+/*---- mise en forme du loader---*/
 .loader {
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   position: fixed;
+  /*---fixer la position du loader----*/
   display: flex;
+  /*--- position des lettres---*/
   justify-content: center;
   align-items: center;
   background-color: #f2f2f2;
   z-index: 2;
+  /*---positionne le loader au dessus de tous les éléments dela page d'accueil---*/
   opacity: 1;
+  /*--- laisse apparaitre le loader ---*/
   animation: transition 1s ease-in-out 3s forwards;
+  /*---- affiche le loader pendant 3 seconde---*/
 }
 
+/*--- mise en forme des lettres et animation---*/
 .loader span {
   font-size: 50px;
   text-shadow: 0 0px #9356DC, 0 0px #FF79DA;
   font-family: "shrikhand";
   color: #9356DC;
   transform: translate(0, 100%) rotate(4deg);
-  animation: bounce 2s ease-in-out infinite;
+  animation: bounce 3s ease-in-out infinite;
+  /*--- animation de rebond des lettres---*/
 }
+
+/*--- délai d'animation pour chaque span---*/
 .loader span:nth-child(1) {
-  animation-delay: 120ms;
+  animation-delay: 0.15s;
 }
+
 .loader span:nth-child(2) {
-  animation-delay: 240ms;
+  animation-delay: 0.3s;
 }
+
 .loader span:nth-child(3) {
-  animation-delay: 360ms;
+  animation-delay: 0.45s;
 }
+
 .loader span:nth-child(4) {
-  animation-delay: 480ms;
+  animation-delay: 0.6s;
 }
+
 .loader span:nth-child(5) {
-  animation-delay: 600ms;
+  animation-delay: 0.75s;
 }
+
 .loader span:nth-child(6) {
-  animation-delay: 720ms;
+  animation-delay: 0.9s;
 }
+
 .loader span:nth-child(7) {
-  animation-delay: 840ms;
+  animation-delay: 1.05s;
 }
+
 .loader span:nth-child(8) {
-  animation-delay: 960ms;
+  animation-delay: 1.2s;
 }
 
 @keyframes transition {
@@ -505,7 +534,7 @@ header {
   background-color: #99E2D0;
   padding: 0.5rem;
   border-radius: 5%;
-  color: #99E2D0 10%;
+  color: #c1ede2;
   font-size: 14px;
   font-weight: bold;
   color: #278870;
@@ -637,24 +666,21 @@ header {
     max-width: 30%;
   }
 }
-.plat .details {
+
+.details {
   padding: 2% 5%;
   position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   transform: scale(1);
   transition: transform 400ms;
   z-index: 1;
 }
-.plat .details h3 {
+.details h3 {
   font-weight: 400;
   margin: 2% 0 0 0;
-}
-.plat .details::after {
-  content: "";
-  opacity: 0;
-  z-index: -1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: margin-right 0.5s ease-in-out;
 }
 
 .sousdetails {
@@ -664,14 +690,10 @@ header {
 }
 .sousdetails p {
   text-transform: none;
-  margin-right: 10px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   font-size: 14px;
-}
-.sousdetails .prix {
-  font-size: bold;
 }
 
 /*# sourceMappingURL=style.css.map */

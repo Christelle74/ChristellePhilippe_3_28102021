@@ -1,20 +1,29 @@
 .coche {
+    /*---pour aligner les éléments  check---*/
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /*--- pour positionner l'élément sur le coté droit---*/
     position: absolute;
     right: 0;
     bottom: 0;
+
+    /*---mise en forme---*/
     width: 0px;
     height: 100%;
     background-color: $tertiaire;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
+
+    /*---animation de l'élément ---*/
     opacity: 0;
     transition:  ease-in-out 0.5s; /*---permet le retour souple---*/
     -webkit-transition: ease-in-out 0.5s ;
 }
 
+
+/*--- mise en forme et animation du check---*/
 .coche .fas {
     width: 22px;
     height: 22px;
@@ -30,23 +39,21 @@
 
 .plat:hover .fa-check {
     transform: rotate(360deg);
-    transition: transform 0.5s ease-in-out ;
-    -webkit-transition: transform ease-in-out 0.5s ;
-    translate: 60px, 0;
-    opacity: 1;
 }
 
 .plat:hover .coche {
-    transition:  ease-in-out 0.5s;
-    -webkit-transition: ease-in-out 0.5s ;
     opacity: 1;
     width: 50px;
-
 }
 
+/*--- déplacement du prix au hover---*/
 .plat:hover .carte__prix {
     margin-right: 35px;
-    
+}
+
+/*--- déplacement du titre au hover si cela est nécessaire---*/
+.plat:hover .details h3 {
+    margin-right: 35px;
 }
 
 

@@ -19,7 +19,7 @@
 .plat
  {
     opacity: 0; /*---opacité 0 pour que les plats n'apparaissent pas au chargement de la page--*/
-    animation: fadeIn forwards .75s ease-in-out; /*---forwards : conserve propriétés de l'image à 100%---*/
+    animation: fadeIn forwards .75s ease-in-out; /*---forwards : conserve propriétés de l'image à 100% de l'animation---*/
 }
 
 @keyframes fadeIn {

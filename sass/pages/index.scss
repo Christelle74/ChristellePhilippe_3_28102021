@@ -144,7 +144,7 @@
             background-color: $tertiaire;
             padding: $padding;
             border-radius: 5%;
-            color:$tertiaire 10%;
+            color:lighten($tertiaire, 10%);
             font-size: 14px;
             font-weight: bold;
             color: darken($tertiaire, 40%);

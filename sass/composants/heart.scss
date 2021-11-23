@@ -5,7 +5,8 @@
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;  /*--pour créer la bordure du coeur--*/
     
 }
-   .fa-heart {
+
+.fa-heart {
     transition: color 1s ease;
         &::after {
         content: "\f004";
@@ -17,11 +18,11 @@
     }
     &:hover {
         opacity: 1;
-        transition: couleur 1s ease forwards;
+        transition: couleur 1s ease;
         
         &::after {
             opacity: 1;
-            animation: couleur 1s ease-in-out;
+            animation: couleur 1s ease-in-out forwards;
         }
     }
 }
