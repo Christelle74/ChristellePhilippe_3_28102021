@@ -3,25 +3,36 @@
     cursor: pointer;
     position: relative;
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;  /*--pour créer la bordure du coeur--*/
-    
 }
 
+.carte__coeur{
+    margin: 2rem;
+    color: white;
+}
+.titre{
+    & .fa-heart {
+        color: $background;
+        margin-right: 20px;
+        }
+}
 .fa-heart {
-    transition: color 1s ease;
-        &::after {
+    &::after {
         content: "\f004";
         position: absolute;
         top: 0;
         right: 0;
-        color: $secondaire;
-        opacity: 0;
-    }
-    &:hover {
-        opacity: 1;
-        transition: couleur 1s ease;
         
+        color:transparent;
+        background: linear-gradient(to top, #9356DC, #FF79DA);
+        
+
+        transition: transform 1s ease-in-out;
+        transform: scale(0);
+    }
+    
+        &:hover {
+        transform: scale(1.2);
         &::after {
-            opacity: 1;
             animation: couleur 1s ease-in-out forwards;
         }
     }
@@ -29,17 +40,9 @@
 
 @keyframes couleur {
     0% {
-        opacity: 0;
         transform: scale(0);
     }
-    
-    70% {
-        opacity: 1;
-        transform: scale(1);
-        color: $primaire;
-    }
     100% {
-        opacity: 1;
         transform: scale(1);
     }
 }

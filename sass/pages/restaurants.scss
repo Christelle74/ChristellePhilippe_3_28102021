@@ -45,10 +45,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;  
-    & .fa-heart {
-    color: $background;
-    margin-right: 20px;
-    }
 }
 
 .menus {
@@ -103,8 +99,6 @@
     position: relative;
     transform: scale(1);
     transition: transform 400ms;
-    z-index: 1;
-    
     }    
 
 .sousdetails {
@@ -118,7 +112,6 @@
         white-space: nowrap;
         font-size: 14px;
     }
-    
 }
 
 

@@ -1,4 +1,4 @@
-/*---- mise en forme du loader---*/
+/*---- mise en forme du loader et animation---*/
 .loader {
     width: 100%;
     height: 100%;
@@ -26,22 +26,20 @@
 }
 
 
-/*--- délai d'animation pour chaque span---*/
-.loader span:nth-child(1) {animation-delay: 0.15s; }
-.loader span:nth-child(2) {animation-delay: 0.30s; }
-.loader span:nth-child(3) {animation-delay: 0.45s; }
-.loader span:nth-child(4) {animation-delay: 0.60s; }
-.loader span:nth-child(5) {animation-delay: 0.75s; }
-.loader span:nth-child(6) {animation-delay: 0.90s; }
-.loader span:nth-child(7) {animation-delay: 1.05s; }
-.loader span:nth-child(8) {animation-delay: 1.20s; }
+/*---- délai d'animation pour chaque span---*/
+@for $i from 1 through 8 {
+  span:nth-child(#{$i}) {
+    animation-delay: 120ms * $i;
+  }
+}
 
-
+/*---- animation 3s avant l'affichage page d'accueil---*/
 @keyframes transition {
   0% {opacity: 1;}
   100% {opacity: 0; z-index: 0;}
 }
 
+/*--- animation du loader ---*/
 @keyframes bounce {
   33% {
     text-shadow: 0 30px $tertiaire, 0 100px $tertiaire;

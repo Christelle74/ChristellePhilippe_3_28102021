@@ -1,19 +1,18 @@
 button {
-    @include button;
+  @include button;
 }
 
 .bouton {
-    text-align: center;
-    text-decoration: none;
-    color: white;
-@include tab-min-width-776 {
-        margin: 30px;
-    }
-} 
+  text-align: center;
+  @include tab-min-width-776 {
+    margin: 30px;
+  }
+}
 
 /*--- bouton des pages restaurant : espace et padding---*/
 #fiche > .bouton {
-    margin: 3rem auto;
-    > .bouton {padding: 1rem 5rem;
-    }
+  margin: 3rem auto;
+  > .bouton {
+    padding: 1rem 5rem;
+  }
 }
