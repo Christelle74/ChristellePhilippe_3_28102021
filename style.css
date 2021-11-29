@@ -78,47 +78,44 @@ button:hover {
   padding: 1rem 5rem;
 }
 
-.carte__coeur, .fa-heart {
-  font-size: 20px;
-  cursor: pointer;
-  position: relative;
-  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-  /*--pour créer la bordure du coeur--*/
-}
-
-.carte__coeur {
-  margin: 2rem;
-  color: white;
-}
-
-.titre .fa-heart {
+.coeur {
+  font-size: 25px;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
   color: #f2f2f2;
-  margin-right: 20px;
+  -webkit-text-stroke-width: 1px;
+  /*---- épaisseur contour du coeur---*/
+  -webkit-text-stroke-color: grey;
+  /*--- couleur contour coeur---*/
+  transition: all 0.5s ease-in-out;
+  /*--- pour rendre le scale plus souple---*/
+  transform: scale(1);
 }
 
-.fa-heart::after {
-  content: "\f004";
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: transparent;
-  background: linear-gradient(to top, #9356DC, #FF79DA);
-  transition: transform 1s ease-in-out;
-  transform: scale(0);
-}
-.fa-heart:hover {
+.coeur:hover {
+  cursor: pointer;
+  background: linear-gradient(to bottom left, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+  /*---- le gradient ne se limite qu'au coeur ---*/
+  -webkit-text-fill-color: transparent;
+  /*----transparence de color pour faire apparaitre le gradient---*/
+  -webkit-text-stroke-width: 0px;
+  /*--- disparition du contour du coeur---*/
+  animation: animation 0.5s linear forwards;
+  /*--- apparition progressive du dégradé---*/
   transform: scale(1.2);
-}
-.fa-heart:hover::after {
-  animation: couleur 1s ease-in-out forwards;
+  /*--- le coeur grossit---*/
 }
 
-@keyframes couleur {
+@keyframes animation {
   0% {
-    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
   }
   100% {
-    transform: scale(1);
+    opacity: 1;
   }
 }
 /*----delai d'apparition de chaque partie"plat"---*/
